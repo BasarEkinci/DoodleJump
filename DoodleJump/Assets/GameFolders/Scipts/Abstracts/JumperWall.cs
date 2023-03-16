@@ -1,6 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using DoodleJump.Controllers;
 using UnityEngine;
 
 namespace DoodleJump.Abstarcts
@@ -10,12 +9,12 @@ namespace DoodleJump.Abstarcts
         private bool isGorunded;
 
         public bool IsGrounded => isGorunded;
+
         
         private void OnCollisionEnter2D(Collision2D col)
         {
-            PlayerController player = GetComponent<PlayerController>();
 
-            if (player != null && col.GetContact(0).normal.y == -1)
+            if (col.collider != null && col.GetContact(0).normal.y == -1)
             {
                 isGorunded = true;
             }
