@@ -11,20 +11,15 @@ namespace DoodleJump.Controllers
     public class MoverWallController : JumperWall
     {
 
-        private SpriteRenderer spriteRenderer;
+        [SerializeField] private float speed;
+        [SerializeField] private float leftBound;
+        [SerializeField] private float rightBound;
 
-        private void Awake()
-        {
-            spriteRenderer = GetComponent<SpriteRenderer>();
-        }
+        private float direction;
 
         private void Update()
         {
-            Debug.Log(IsGrounded);
-            if (IsGrounded)
-            {
-                spriteRenderer.color = new Color(113f, 100f, 100f, Mathf.Lerp(100,0,2f) * Time.deltaTime);
-            }
+            
         }
     }    
 }
