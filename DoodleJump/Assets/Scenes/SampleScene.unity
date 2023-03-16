@@ -958,8 +958,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  leftBound: 3
-  rightBound: -3
+  leftBound: -3
+  rightBound: 3
 --- !u!1 &1712893907
 GameObject:
   m_ObjectHideFlags: 0
