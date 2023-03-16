@@ -19,7 +19,12 @@ namespace DoodleJump.Controllers
 
         private void Update()
         {
+            if (transform.position.x >= rightBound)
+                direction = -1f;
+            else if (transform.position.x <= leftBound)
+                direction = 1f;
             
+            transform.Translate(Vector2.right * (speed * direction * Time.deltaTime));
         }
     }    
 }
