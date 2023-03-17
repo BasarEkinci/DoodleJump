@@ -1,15 +1,18 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using DoodleJump.Abstarcts;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class TemporaryPlatformController : MonoBehaviour
+namespace DoodleJump.Controllers 
 {
-    private void OnCollisionEnter2D(Collision2D col)
+    public class TemporaryPlatformController : Platform
     {
-        if (col.collider != null)
+        private void OnCollisionExit2D(Collision2D other)
         {
-            Destroy(gameObject,0.3f);
+            if(isCollide)
+                Destroy(gameObject,0.3f);
         }
-    }
+    }    
 }
+
+

@@ -1,60 +1,32 @@
+using System;
+using DoodleJump.Inputs;
 using UnityEngine;
 
 namespace DoodleJump.Controllers
 {
     public class PlayerController : MonoBehaviour
     {
-        private Rigidbody2D playerRb;
-        private bool isGrounded;
-        [SerializeField] private float jumpForce;
-        [SerializeField] private float moveSpeed;
-        private Transform gorundCheck;
-        private bool isFacingRight;
-        private float direction;
+        private Rigidbody2D playerRigidbody2D;
+        [SerializeField] private float moveSpeed; 
+        private PlayerInputs input;
         
         private void Awake()
         {
-            playerRb = GetComponent<Rigidbody2D>();
-            gorundCheck = this.transform;
+            playerRigidbody2D = GetComponent<Rigidbody2D>();
+            input = gameObject.AddComponent<PlayerInputs>();
         }
-    
-        private void Update()
+
+        private void FixedUpdate()
         {
-            direction = Input.GetAxis("Horizontal");
-            Flip();
+            playerRigidbody2D.velocity =
+                new Vector2(moveSpeed * input.Direction * Time.deltaTime, playerRigidbody2D.velocity.y);
         }
         
-        public void FixedUpdate()
+
+        public void Jump(float jumpForce)
         {
-            if (isGrounded)
-            {
-                playerRb.velocity = new Vector2(playerRb.velocity.x,jumpForce);
-                isGrounded = false;
-            }
-            playerRb.velocity = new Vector2(direction * moveSpeed,playerRb.velocity.y);
-            
-        }
-    
-        private void OnCollisionEnter2D(Collision2D col)
-        {
-            if (col.collider != null && col.GetContact(0).normal.y == 1)
-            {
-                isGrounded = true;
-                playerRb.velocity = new Vector2(playerRb.velocity.x, 0f);
-            }
-        }
-    
-        private void Flip()
-        {
-            if (isFacingRight && direction < 0f || !isFacingRight && direction > 0f)
-            {
-                isFacingRight = !isFacingRight;
-                Vector3 localScale = transform.localScale;
-                localScale.x *= -1f;
-                transform.localScale = localScale;
-            }
-        }
+            playerRigidbody2D.velocity = new Vector2(playerRigidbody2D.velocity.x, jumpForce * Time.deltaTime);
+        }  
     }
-    
 }
 

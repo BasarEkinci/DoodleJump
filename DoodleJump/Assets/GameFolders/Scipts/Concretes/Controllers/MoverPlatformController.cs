@@ -1,14 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using DoodleJump.Abstarcts;
-using Unity.VisualScripting;
 using UnityEngine;
 
 
 namespace DoodleJump.Controllers
 {
-    public class MoverPlatformController : JumperWall
+    public class MoverPlatformController : Platform
     {
 
         [SerializeField] private float speed;
