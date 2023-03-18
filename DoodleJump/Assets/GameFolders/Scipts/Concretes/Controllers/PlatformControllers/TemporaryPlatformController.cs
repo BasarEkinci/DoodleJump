@@ -3,7 +3,7 @@ using DoodleJump.Abstarcts;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace DoodleJump.Controllers 
+namespace DoodleJump.Controllers.PlatformControllers
 {
     public class TemporaryPlatformController : Platform
     {

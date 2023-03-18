@@ -2,7 +2,7 @@ using DoodleJump.Abstarcts;
 using UnityEngine;
 
 
-namespace DoodleJump.Controllers
+namespace DoodleJump.Controllers.PlatformControllers
 {
     public class MoverPlatformController : Platform
     {
