@@ -10,7 +10,7 @@ namespace DoodleJump.Controllers.PlatformControllers
         {
             PlayerController playerController = collision.collider.GetComponent<PlayerController>();
             
-            if (playerController != null && collision.GetContact(0).normal.y == -1f)
+            if (playerController != null && collision.relativeVelocity.y <= 0f)
             {
                 playerController.Jump(JumpForce * 2.5f);
                 isCollide = true;

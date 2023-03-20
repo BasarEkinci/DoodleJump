@@ -7,10 +7,13 @@ namespace DoodleJump.Controllers.PlatformControllers
 {
     public class TemporaryPlatformController : Platform
     {
-        private void OnCollisionExit2D(Collision2D other)
+        protected override void OnCollisionEnter2D(Collision2D col)
         {
-            if(isCollide)
-                Destroy(gameObject,0.3f);
+            base.OnCollisionEnter2D(col);
+            if (isCollide)
+            {
+                Destroy(gameObject);
+            }
         }
     }    
 }

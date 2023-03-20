@@ -8,7 +8,7 @@ namespace DoodleJump.Controllers.PlatformControllers
 {
     public class SpawnerController : MonoBehaviour
     {
-        [SerializeField] private GameObject player;
+        [SerializeField] private Transform player;
         [SerializeField] private GameObject[] platforms;
         
         private float verticalLimit = 3f;
@@ -25,7 +25,7 @@ namespace DoodleJump.Controllers.PlatformControllers
 
         private void Update()
         {
-            if (player.transform.position.y % 150 == 0)
+            if (player.position.y >= 150f && player.position.y <= 153f)
             {
                 SpawnPlatform();    
             }
@@ -45,11 +45,19 @@ namespace DoodleJump.Controllers.PlatformControllers
 
         private int PlatformChance()
         {
-            platformChance = Random.Range(0, 15);
+            if(verticalLimit < 300)
+                platformChance = Random.Range(0, 15);
+            else if (verticalLimit > 300f && verticalLimit < 600f)
+                platformChance = Random.Range(5, 15);
+            else if (verticalLimit > 600f && verticalLimit < 700f)
+                platformChance = Random.Range(5, 8);
+            else if (verticalLimit > 700f && verticalLimit < 800f)
+                platformChance = Random.Range(11, 15);
 
+            
             if (platformChance <= 5) platformIndex = 0;
             else if (platformChance > 5 && platformChance <= 8) platformIndex = 1;
-            else if(platformChance >7 && platformChance <= 11) platformIndex = 2;
+            else if(platformChance > 8 && platformChance <= 11) platformIndex = 2;
             else if (platformChance > 11 && platformChance <= 15) platformIndex = 3;
             
             return platformIndex;
