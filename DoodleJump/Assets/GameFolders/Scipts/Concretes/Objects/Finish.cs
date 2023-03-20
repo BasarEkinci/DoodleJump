@@ -10,8 +10,7 @@ namespace DoodleJump.Objects
             {
                 Debug.Log("GameOver");
             }
-
-            if (col.gameObject.CompareTag("Obtacle"))
+            if (col.gameObject.CompareTag("Obstacle"))
             {
                 Destroy(col.gameObject);
             }

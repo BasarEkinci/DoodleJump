@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5758267469726843051}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Obtacle
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
