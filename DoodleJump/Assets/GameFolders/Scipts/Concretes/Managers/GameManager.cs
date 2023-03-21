@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace DoodleJump.Managers
@@ -5,8 +6,20 @@ namespace DoodleJump.Managers
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance { get; private set; }
+        private float score;
 
-        private void Update()
+        public float Score
+        {
+            get => score;
+
+            set
+            {
+                if (value > score)
+                    score = value;
+            }
+        }
+
+        private void Awake()
         {
             Singelton();
         }

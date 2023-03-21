@@ -1,6 +1,6 @@
 using DoodleJump.Inputs;
+using DoodleJump.Managers;
 using UnityEngine;
-
 
 namespace DoodleJump.Controllers
 {
@@ -22,6 +22,7 @@ namespace DoodleJump.Controllers
 
         private void Update()
         {
+            GameManager.Instance.Score = transform.position.y;
             Flip();
         }
 
