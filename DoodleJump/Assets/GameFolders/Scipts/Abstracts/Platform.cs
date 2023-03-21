@@ -1,4 +1,3 @@
-using System;
 using DoodleJump.Controllers;
 using UnityEngine;
 
