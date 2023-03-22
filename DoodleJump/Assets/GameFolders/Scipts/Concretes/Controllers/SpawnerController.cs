@@ -8,7 +8,6 @@ namespace DoodleJump.Controllers.PlatformControllers
 {
     public class SpawnerController : MonoBehaviour
     {
-        [SerializeField] private Transform player;
         [SerializeField] private GameObject[] platforms;
 
         private float verticalLimit = 3f;
@@ -28,6 +27,7 @@ namespace DoodleJump.Controllers.PlatformControllers
             int spawner = (int)GameManager.Instance.Score % 100;
             if (spawner == 0)
             {
+                amount = 50;
                 SpawnPlatform();
             }
         }
