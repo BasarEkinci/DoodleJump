@@ -12,7 +12,7 @@ namespace DoodleJump.Abstarcts
 
         private void Start()
         {
-            JumpForce = 500f;
+            JumpForce = 800f;
         }
 
         protected virtual void OnCollisionEnter2D(Collision2D col)

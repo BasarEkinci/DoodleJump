@@ -1,9 +1,8 @@
-using System;
 using DoodleJump.Enums;
+using DoodleJump.Managers;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
-
 
 namespace DoodleJump.Controllers.PlatformControllers
 {
@@ -19,8 +18,6 @@ namespace DoodleJump.Controllers.PlatformControllers
         private int platformChance;
         private int platformIndex;
 
-        private bool isInteger;
-        
         private void Start()
         {
             SpawnPlatform();
@@ -28,7 +25,8 @@ namespace DoodleJump.Controllers.PlatformControllers
 
         private void Update()
         {
-            if (player.position.y >= 150f && player.position.y <= 153f)
+            int spawner = (int)GameManager.Instance.Score % 100;
+            if (spawner == 0)
             {
                 SpawnPlatform();
             }
@@ -59,6 +57,3 @@ namespace DoodleJump.Controllers.PlatformControllers
         }
     }
 }
-
-
-

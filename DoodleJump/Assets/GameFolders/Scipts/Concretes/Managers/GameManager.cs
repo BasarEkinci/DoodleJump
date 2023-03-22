@@ -36,6 +36,11 @@ namespace DoodleJump.Managers
                 Destroy(this.gameObject);
             }
         }
+
+        public void GameOver()
+        {
+            
+        }
     }
 }
 
