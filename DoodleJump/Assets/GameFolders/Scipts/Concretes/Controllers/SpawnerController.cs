@@ -27,7 +27,7 @@ namespace DoodleJump.Controllers.PlatformControllers
             int spawner = (int)GameManager.Instance.Score % 100;
             if (spawner == 0)
             {
-                amount = 50;
+                amount = 10;
                 SpawnPlatform();
             }
         }
@@ -38,8 +38,8 @@ namespace DoodleJump.Controllers.PlatformControllers
             {
                 platformIndex = PlatformChance(); 
                 spawnPos = new Vector3(Random.Range(-horizontalLimit, horizontalLimit), verticalLimit, 0); 
-                Instantiate(platforms[platformIndex], spawnPos, quaternion.identity); 
-                verticalLimit += Random.Range(1f, 3f); 
+                Instantiate(platforms[platformIndex], spawnPos, quaternion.identity);
+                verticalLimit += Random.Range(4f, 5f);
                 spawnPos.y = verticalLimit; 
             }
         }
@@ -55,5 +55,7 @@ namespace DoodleJump.Controllers.PlatformControllers
 
             return platformIndex;
         }
+
+
     }
 }
