@@ -7,6 +7,12 @@ namespace DoodleJump.Managers
     {
         public static GameManager Instance { get; private set; }
         private float score;
+        public bool IsGameOver { get; private set; }
+
+        private void Start()
+        {
+            IsGameOver = false;
+        }
 
         public float Score
         {
@@ -39,7 +45,8 @@ namespace DoodleJump.Managers
 
         public void GameOver()
         {
-            
+            Debug.Log("Game Over");
+            IsGameOver = true;
         }
     }
 }

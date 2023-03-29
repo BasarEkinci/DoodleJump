@@ -1,25 +1,51 @@
-
-using System.Collections;
+using System;
+using DoodleJump.Managers;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace DoodleJump.Controllers
 {
     public class EnemyController : MonoBehaviour
     {
         [SerializeField] private GameObject bulletPrefab;
-        [SerializeField] private Transform playerTransform;
+        [SerializeField] private Transform spawnPos;
+        private float xBound = 5.5f;
+        private float moveSpeed = 7f;
+        private int direction = 1;
 
-        
-        private void Update()
+        private void Start()
         {
-            StartCoroutine("CreateBulletAsync");
-            bulletPrefab.transform.position = Vector3.Lerp(bulletPrefab.transform.position,playerTransform.position,3f);
+            InvokeRepeating("CreateBullet",1f,1.5f);
         }
 
-        IEnumerator CreateBulletAsync()
+        private void LateUpdate()
         {
-            yield return new WaitForSecondsRealtime(1f);
-            Instantiate(bulletPrefab);
+            if (transform.position.x >= xBound)
+            {
+                direction = -1;
+            }
+            else if (transform.position.x <= -xBound)
+            {
+                direction = 1;
+            }
+            transform.position += Vector3.right * (moveSpeed * Time.deltaTime * direction);
+        }
+
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            PlayerController player = col.GetComponent<PlayerController>();
+
+            if (player != null)
+            {
+                GameManager.Instance.GameOver();
+            }
+        }
+
+
+        private void CreateBullet()
+        {
+            Instantiate(bulletPrefab,spawnPos.position,transform.rotation);
+            Debug.Log("Bullet Created!");
         }
     }    
 }

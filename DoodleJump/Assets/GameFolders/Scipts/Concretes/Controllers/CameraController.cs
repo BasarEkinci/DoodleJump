@@ -1,4 +1,4 @@
-using System;
+using DoodleJump.Managers;
 using UnityEngine;
 
 namespace DoodleJump.Controllers
@@ -9,6 +9,8 @@ namespace DoodleJump.Controllers
         [SerializeField] private float smoothSpeed;
         private void LateUpdate()
         {
+            if(GameManager.Instance.IsGameOver) return;
+            
             if (target.position.y > transform.position.y)
             {
                 Vector3 newPos = new Vector3(transform.position.x, target.position.y, transform.position.z);

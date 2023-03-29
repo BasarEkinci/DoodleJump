@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace DoodleJump.Controllers.PlatformControllers
+namespace DoodleJump.Platforms
 {
     public class UselessPlatformController : MonoBehaviour
     {

@@ -1,8 +1,9 @@
 using DoodleJump.Abstarcts;
+using DoodleJump.Controllers;
 using UnityEngine;
 
 
-namespace DoodleJump.Controllers.PlatformControllers
+namespace DoodleJump.Platforms
 {
     public class PowerfulPlatformCOntroller : Platform
     {
@@ -12,7 +13,7 @@ namespace DoodleJump.Controllers.PlatformControllers
             
             if (playerController != null && collision.relativeVelocity.y <= 0f)
             {
-                playerController.Jump(JumpForce * 2.5f);
+                playerController.Jump(JumpForce * 1.5f);
                 isCollide = true;
             }
             else

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using DoodleJump.Abstarcts;
 using UnityEngine;
 
-namespace DoodleJump.Controllers
+namespace DoodleJump.Platforms
 {
     public class StaticPlatformController : Platform
     {

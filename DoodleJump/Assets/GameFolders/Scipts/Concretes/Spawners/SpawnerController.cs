@@ -4,7 +4,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace DoodleJump.Controllers.PlatformControllers
+namespace DoodleJump.Spawners
 {
     public class SpawnerController : MonoBehaviour
     {
