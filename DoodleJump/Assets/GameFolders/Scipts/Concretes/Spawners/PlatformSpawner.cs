@@ -6,12 +6,12 @@ using Random = UnityEngine.Random;
 
 namespace DoodleJump.Spawners
 {
-    public class SpawnerController : MonoBehaviour
+    public class PlatformSpawner : MonoBehaviour
     {
         [SerializeField] private GameObject[] platforms;
 
         private float verticalLimit = 3f;
-        private float horizontalLimit = 5f;
+        private float horizontalLimit;
         private int amount = 100;
         private Vector3 spawnPos;
         private int platformChance;
@@ -34,12 +34,18 @@ namespace DoodleJump.Spawners
 
         private void SpawnPlatform()
         {
+            
             for (int i = 0; i < amount; i++)
             {
-                platformIndex = PlatformChance(); 
-                spawnPos = new Vector3(Random.Range(-horizontalLimit, horizontalLimit), verticalLimit, 0); 
-                Instantiate(platforms[platformIndex], spawnPos, quaternion.identity);
-                verticalLimit += Random.Range(4f, 5f);
+                platformIndex = PlatformChance();
+                horizontalLimit = Random.Range(-4, 4);
+                spawnPos = new Vector3(horizontalLimit, verticalLimit, 0); 
+                var spawnedPlatform =Instantiate(platforms[platformIndex], spawnPos, quaternion.identity);
+                if (platformIndex == (int)PlatformEnum.UselessPlatform)
+                    verticalLimit += 1;
+                else
+                    verticalLimit += Random.Range(1f,4f);
+                
                 spawnPos.y = verticalLimit; 
             }
         }
@@ -55,7 +61,5 @@ namespace DoodleJump.Spawners
 
             return platformIndex;
         }
-
-
     }
 }

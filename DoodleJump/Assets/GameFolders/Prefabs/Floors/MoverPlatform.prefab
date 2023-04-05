@@ -120,8 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  leftBound: -3
-  rightBound: 3
+  leftBound: -4
+  rightBound: 4
 --- !u!68 &5317936693173100209
 EdgeCollider2D:
   m_ObjectHideFlags: 0
