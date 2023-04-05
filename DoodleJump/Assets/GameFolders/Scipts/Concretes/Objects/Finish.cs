@@ -6,7 +6,8 @@ namespace DoodleJump.Objects
     {
         private void OnTriggerEnter2D(Collider2D col)
         {
-            Destroy(col.gameObject);
+            if(!col.CompareTag("Player"))
+                Destroy(col.gameObject);
         }
     }    
 }

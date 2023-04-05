@@ -34,9 +34,11 @@ namespace DoodleJump.Spawners
 
         private void EnemySpawn()
         {
+            if (GameManager.Instance.IsGameOver) return;
+            
             spawnPos = new Vector3(Random.Range(-4.5f,4.5f), transform.position.y, 0f);
-            int spawner = (int)GameManager.Instance.Score;
-            if (spawner % 50 == 0 && spawner >= 50)
+            int spawnChance = Random.Range(0, 5);
+            if (spawnChance < 2 && GameManager.Instance.Score > 30)
             {
                 Instantiate(enemyPrefabs[Random.Range(0,enemyPrefabs.Count)], spawnPos, transform.rotation);
                 hasSpawned = true;

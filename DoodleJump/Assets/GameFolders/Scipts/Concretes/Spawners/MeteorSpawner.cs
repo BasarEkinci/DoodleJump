@@ -24,10 +24,8 @@ namespace DoodleJump.Spawners
             if(GameManager.Instance.IsGameOver) return;
             
             spawnChance = Random.Range(0, 5);
-            if(spawnChance < 3)
+            if(spawnChance < 2)
                 Instantiate(meteorPrefab, spawnPoints[Random.Range(0, spawnPoints.Count)].position, transform.rotation);
-            Debug.Log("Meteor Spawned,Spawn Chance: " + spawnChance);
-            
         }
     }    
 }
