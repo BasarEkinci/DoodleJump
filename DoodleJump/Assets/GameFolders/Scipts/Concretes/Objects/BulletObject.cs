@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using DoodleJump.Abstarcts;
 using DoodleJump.Controllers;
 using UnityEngine;
 

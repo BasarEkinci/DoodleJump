@@ -1,19 +1,13 @@
 using System;
+using DoodleJump.Abstarcts;
 using UnityEngine;
 
 namespace DoodleJump.Managers
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager : SingeltonThisObjects<GameManager>
     {
-        public static GameManager Instance { get; private set; }
         private float score;
         public bool IsGameOver { get; private set; }
-
-        private void Start()
-        {
-            IsGameOver = false;
-        }
-
         public float Score
         {
             get => score;
@@ -25,28 +19,22 @@ namespace DoodleJump.Managers
             }
         }
 
-        private void Awake()
+        private void Start()
         {
-            Singelton();
+            SoundManager.Instance.StopSound(1);
         }
 
-        private void Singelton()
+        private void Awake()
         {
-            if (Instance == null)
-            {
-                Instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
-            else
-            {
-                Destroy(this.gameObject);
-            }
+            IsGameOver = false;
+            SingeltonThisObject(this);
         }
 
         public void GameOver()
         {
             Debug.Log("Game Over");
             IsGameOver = true;
+            SoundManager.Instance.PlaySound(1);
         }
     }
 }

@@ -1,28 +1,27 @@
+using System;
 using DoodleJump.Abstarcts;
+using DoodleJump.Inputs;
 using UnityEngine;
 
-
-public class Bullet : MonoBehaviour
+namespace DoodleJump.Objects
 {
-    private float moveSpeed = 20f;
-    private Rigidbody2D bulletRb;
-
-    private void Awake()
+    public class Bullet : MonoBehaviour
     {
-        bulletRb = GetComponent<Rigidbody2D>();
-    }
-
-    private void FixedUpdate()
-    {
-        transform.position += Vector3.up * (moveSpeed * Time.deltaTime);
-    }
-
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        Enemy enemy = col.GetComponent<Enemy>();
-        if (enemy != null)
+        private void Start()
         {
-            Destroy(col.gameObject);
+            Destroy(gameObject,5f);
         }
-    }
+
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            Enemy enemy = col.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                SoundManager.Instance.PlaySound(3);
+                Destroy(col.gameObject);
+                Destroy(gameObject);
+            }
+        }
+    }    
 }
+

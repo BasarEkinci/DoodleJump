@@ -1,3 +1,4 @@
+using DoodleJump.Managers;
 using UnityEngine;
 
 namespace DoodleJump.Objects
@@ -8,6 +9,8 @@ namespace DoodleJump.Objects
         {
             if(!col.CompareTag("Player"))
                 Destroy(col.gameObject);
+            else
+                GameManager.Instance.GameOver();
         }
     }    
 }
