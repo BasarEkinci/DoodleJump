@@ -12,6 +12,7 @@ namespace DoodleJump.Objects
             if (player != null)
             {
                 player.BulletCounter += 5;
+                SoundManager.Instance.PlaySound(4);
                 player.BulletCounter = Mathf.Min(player.BulletCounter, 20);
                 Destroy(gameObject);
             }

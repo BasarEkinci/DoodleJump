@@ -14,7 +14,6 @@ namespace DoodleJump.Controllers
         private bool isFacingRight = true;
         private int bulletCounter = 20;
         
-
         public bool IsJumping => playerRigidbody2D.velocity.y > 0.01f;
         
         public int BulletCounter
@@ -42,10 +41,9 @@ namespace DoodleJump.Controllers
         private void FixedUpdate()
         {
             Move();
-
         }
-        //--------------------------
-        // Shooting bullet
+
+        // Shooting bullet------------------
         private void CreateBullet()
         {
             if (input.Shoot)
@@ -57,17 +55,21 @@ namespace DoodleJump.Controllers
                 bulletCounter--;
             }
         }
-        //Shooting Bullet
-        //--------------------------------
+        //-----------------------------------
+        
+        //Moving Left-Right------------------
         private void Move()
         {
             if (GameManager.Instance.IsGameOver) return;
             
             Vector3 position = transform.position;
             position.x += input.Direction * moveSpeed * Time.deltaTime;
-            position.x = Mathf.Clamp(position.x,-5.8f, 5.8f);
+            position.x = Mathf.Clamp(position.x,-5.1f, 5.1f);
             transform.position = position;
         }
+        //------------------------------------
+
+        //to Jump-----------------------------
         public void Jump(float jumpForce)
         {
             if (GameManager.Instance.IsGameOver) return;
@@ -77,9 +79,10 @@ namespace DoodleJump.Controllers
                 SoundManager.Instance.PlaySound(0);
                 playerRigidbody2D.velocity = new Vector2(playerRigidbody2D.velocity.x, jumpForce * Time.deltaTime);
             }
-            
         }
-
+        //------------------------------------
+        
+        //To flip Player------------------------------
         private void Flip()
         {
             if(GameManager.Instance.IsGameOver) return;
@@ -92,6 +95,7 @@ namespace DoodleJump.Controllers
                 transform.localScale = localScale;
             }
         }
+        //-----------------------------------------------
     }
 }
 
