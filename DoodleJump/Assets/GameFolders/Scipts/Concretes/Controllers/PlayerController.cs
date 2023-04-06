@@ -35,12 +35,13 @@ namespace DoodleJump.Controllers
                 CreateBullet();
             
             GameManager.Instance.Score = transform.position.y;
-            Flip();
+
         }
 
         private void FixedUpdate()
         {
             Move();
+            Flip();
         }
 
         // Shooting bullet------------------

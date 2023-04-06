@@ -9,7 +9,7 @@ namespace DoodleJump.UIs.GameSceneUIs
 {
     public class GameUI : MonoBehaviour
     {
-        [Header("Game Panel")]
+
         [SerializeField] private GameObject gamePanel;
         [SerializeField] private GameObject gameOverPanel;
         [SerializeField] private TMP_Text scoreText;
@@ -21,7 +21,9 @@ namespace DoodleJump.UIs.GameSceneUIs
         {
             if(!gamePanel.activeSelf)
                 gamePanel.SetActive(true);
-
+            
+            if(gameOverPanel.activeSelf)
+                gameOverPanel.SetActive(false);
         }
 
         private void Update()
