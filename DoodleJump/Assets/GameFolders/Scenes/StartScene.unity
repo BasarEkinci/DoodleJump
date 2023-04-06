@@ -675,10 +675,10 @@ MonoBehaviour:
       - m_Target: {fileID: 203463645}
         m_TargetAssemblyTypeName: DoodleJump.UIs.StartSceneUIs.MainMenuPanel, Assembly-CSharp
         m_MethodName: InformationButton
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 247219358}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -965,10 +965,10 @@ MonoBehaviour:
       - m_Target: {fileID: 203463645}
         m_TargetAssemblyTypeName: DoodleJump.UIs.StartSceneUIs.MainMenuPanel, Assembly-CSharp
         m_MethodName: PlayButton
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 274653159}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2528,6 +2528,63 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &1276842724
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8558207777541989877, guid: 8f22a687473d999429734e62bf405115, type: 3}
+      propertyPath: m_Name
+      value: '[GameManager]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558207777541989879, guid: 8f22a687473d999429734e62bf405115, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558207777541989879, guid: 8f22a687473d999429734e62bf405115, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558207777541989879, guid: 8f22a687473d999429734e62bf405115, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558207777541989879, guid: 8f22a687473d999429734e62bf405115, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558207777541989879, guid: 8f22a687473d999429734e62bf405115, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558207777541989879, guid: 8f22a687473d999429734e62bf405115, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558207777541989879, guid: 8f22a687473d999429734e62bf405115, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558207777541989879, guid: 8f22a687473d999429734e62bf405115, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558207777541989879, guid: 8f22a687473d999429734e62bf405115, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558207777541989879, guid: 8f22a687473d999429734e62bf405115, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558207777541989879, guid: 8f22a687473d999429734e62bf405115, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f22a687473d999429734e62bf405115, type: 3}
 --- !u!1 &1286398167
 GameObject:
   m_ObjectHideFlags: 0
@@ -2932,6 +2989,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441315468}
   m_CullTransparentMesh: 1
+--- !u!1001 &1497479067
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 235483122015382195, guid: f33d9d4755bb74548b0fd66e47263e7e, type: 3}
+      propertyPath: m_Name
+      value: '[SoundManager]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 235483122015382198, guid: f33d9d4755bb74548b0fd66e47263e7e, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 235483122015382198, guid: f33d9d4755bb74548b0fd66e47263e7e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 235483122015382198, guid: f33d9d4755bb74548b0fd66e47263e7e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 235483122015382198, guid: f33d9d4755bb74548b0fd66e47263e7e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 235483122015382198, guid: f33d9d4755bb74548b0fd66e47263e7e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 235483122015382198, guid: f33d9d4755bb74548b0fd66e47263e7e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 235483122015382198, guid: f33d9d4755bb74548b0fd66e47263e7e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 235483122015382198, guid: f33d9d4755bb74548b0fd66e47263e7e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 235483122015382198, guid: f33d9d4755bb74548b0fd66e47263e7e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 235483122015382198, guid: f33d9d4755bb74548b0fd66e47263e7e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 235483122015382198, guid: f33d9d4755bb74548b0fd66e47263e7e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f33d9d4755bb74548b0fd66e47263e7e, type: 3}
 --- !u!1 &1526170958
 GameObject:
   m_ObjectHideFlags: 0
@@ -3175,10 +3289,10 @@ MonoBehaviour:
       - m_Target: {fileID: 203463645}
         m_TargetAssemblyTypeName: DoodleJump.UIs.StartSceneUIs.MainMenuPanel, Assembly-CSharp
         m_MethodName: How2PlayButton
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1528915220}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

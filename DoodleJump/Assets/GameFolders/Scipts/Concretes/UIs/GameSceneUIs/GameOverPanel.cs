@@ -18,18 +18,18 @@ namespace DoodleJump.UIs.GameSceneUIs
             scoreText.text = "Score\n " + GameManager.Instance.Score.ToString("0");
             highScoreText.text = "High\nScore\n " + GameManager.Instance.HighScore.ToString("0");
         }
-        
         public void TryAgainButton()
         {
-            gameOverPanel.SetActive(false);
-            GameManager.Instance.RestartGame();
             SceneManager.LoadScene(1);
+            GameManager.Instance.RestartGame();
         }
 
         public void ReturnToMainMenuButton()
         {
             if(gameOverPanel.activeSelf)
                 gameOverPanel.SetActive(false);
+            
+            GameManager.Instance.RestartGame();
             SceneManager.LoadScene(0);
         }
     }    

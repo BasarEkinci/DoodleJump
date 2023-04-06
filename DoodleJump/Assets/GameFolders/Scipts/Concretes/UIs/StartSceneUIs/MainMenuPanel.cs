@@ -13,22 +13,20 @@ namespace DoodleJump.UIs.StartSceneUIs
         [SerializeField] private GameObject how2PlayPanel;
         [SerializeField] private GameObject informationPanel;
         private float revealDuration = 0.2f;
-        public void PlayButton(RectTransform rectTransform)
+        public void PlayButton()
         {
-            rectTransform.DOScale(rectTransform.localScale * 1.25f, revealDuration).SetLoops(2, LoopType.Yoyo);
+            GameManager.Instance.RestartGame();
             SceneManager.LoadScene(1);
         }
 
-        public void How2PlayButton(RectTransform rectTransform)
+        public void How2PlayButton()
         {
-            rectTransform.DOScale(rectTransform.localScale * 1.25f,revealDuration).SetLoops(2, LoopType.Yoyo);
             how2PlayPanel.SetActive(true);
             mainMenuPanel.SetActive(false);
         }
 
-        public void InformationButton(RectTransform rectTransform)
+        public void InformationButton()
         {
-            rectTransform.DOScale(rectTransform.localScale * 1.25f, revealDuration).SetLoops(2, LoopType.Yoyo);
             informationPanel.SetActive(true);
             mainMenuPanel.SetActive(false);
         }
