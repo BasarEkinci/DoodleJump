@@ -1,9 +1,10 @@
+using System;
 using DoodleJump.Managers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace DoodleJump.UIs
+namespace DoodleJump.UIs.GameSceneUIs
 {
     public class GameOverPanel : MonoBehaviour
     {
@@ -14,15 +15,14 @@ namespace DoodleJump.UIs
 
         private void Update()
         {
-            scoreText.text = GameManager.Instance.Score.ToString("0");
-            highScoreText.text = GameManager.Instance.Score.ToString("0");
+            scoreText.text = "Score: " + GameManager.Instance.Score.ToString("0");
+            highScoreText.text = "High Score: " + GameManager.Instance.HighScore.ToString("0");
         }
         
         public void TryAgainButton()
         {
-            if(gameOverPanel.activeSelf)
-                gameOverPanel.SetActive(false);
-            
+            gameOverPanel.SetActive(false);
+            GameManager.Instance.RestartGame();
             SceneManager.LoadScene(1);
         }
 

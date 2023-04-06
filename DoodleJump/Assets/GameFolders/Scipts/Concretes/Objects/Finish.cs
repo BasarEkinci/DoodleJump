@@ -7,6 +7,8 @@ namespace DoodleJump.Objects
     {
         private void OnTriggerEnter2D(Collider2D col)
         {
+            if(GameManager.Instance.IsGameOver) return;
+            
             if(!col.CompareTag("Player"))
                 Destroy(col.gameObject);
             else

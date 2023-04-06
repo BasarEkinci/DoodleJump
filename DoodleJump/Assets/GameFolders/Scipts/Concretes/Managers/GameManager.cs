@@ -9,11 +9,10 @@ namespace DoodleJump.Managers
     {
         private float score;
         private float highScore = 0;
-        public bool IsGameOver { get; private set; }
+        public bool IsGameOver { get;  set; }
         public float Score
         {
             get => score;
-
             set
             {
                 if (value > score)
@@ -22,25 +21,24 @@ namespace DoodleJump.Managers
         }
 
         public float HighScore => highScore;
-
-        private void Start()
-        {
-            SoundManager.Instance.StopSound(1);
-        }
+        
 
         private void Awake()
         {
             IsGameOver = false;
             SingeltonThisObject(this);
         }
+        private void Start()
+        {
+            SoundManager.Instance.StopSound(1);
+        }
 
         private void Update()
         {
-            if (score > highScore)
+            if (Score > highScore)
             {
                 highScore = score;
                 PlayerPrefs.SetFloat("High Score",highScore);
-                PlayerPrefs.Save();
             }
         }
 
@@ -48,6 +46,12 @@ namespace DoodleJump.Managers
         {
             IsGameOver = true;
             SoundManager.Instance.PlaySound(1);
+        }
+
+        public void RestartGame()
+        {
+            IsGameOver = false;
+            score = 0;
         }
     }
 }

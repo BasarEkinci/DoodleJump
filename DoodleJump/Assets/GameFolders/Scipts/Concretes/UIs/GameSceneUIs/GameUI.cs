@@ -5,12 +5,13 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace DoodleJump.UIs
+namespace DoodleJump.UIs.GameSceneUIs
 {
     public class GameUI : MonoBehaviour
     {
         [Header("Game Panel")]
         [SerializeField] private GameObject gamePanel;
+        [SerializeField] private GameObject gameOverPanel;
         [SerializeField] private TMP_Text scoreText;
         [SerializeField] private TMP_Text bulletText;
 
@@ -31,8 +32,11 @@ namespace DoodleJump.UIs
             if (GameManager.Instance.IsGameOver)
             {
                 if(gamePanel.activeSelf)
+                {
                     gamePanel.SetActive(false);
-
+                    gameOverPanel.SetActive(true);
+                }
+                
             }
             else
             {
