@@ -35,7 +35,10 @@ namespace DoodleJump.Controllers
                 CreateBullet();
             
             GameManager.Instance.Score = transform.position.y;
-
+            if (transform.position.x <= -6.1f || transform.position.x >= 6.1f)
+            {
+                transform.position = new Vector3(transform.position.x * -1, transform.position.y);
+            }
         }
 
         private void FixedUpdate()
@@ -62,11 +65,9 @@ namespace DoodleJump.Controllers
         private void Move()
         {
             if (GameManager.Instance.IsGameOver) return;
-            
-            Vector3 position = transform.position;
-            position.x += input.Direction * moveSpeed * Time.deltaTime;
-            position.x = Mathf.Clamp(position.x,-5.1f, 5.1f);
-            transform.position = position;
+
+            var moveDirection = Input.GetAxis("Horizontal");
+            playerRigidbody2D.velocity = new Vector2(moveSpeed * Time.deltaTime * moveDirection, playerRigidbody2D.velocity.y);
         }
         //------------------------------------
 

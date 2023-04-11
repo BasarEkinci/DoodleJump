@@ -17,12 +17,12 @@ namespace DoodleJump.Managers
             {
                 if (value > score)
                     score = value;
+                if (IsGameOver)
+                    score = 0;
             }
         }
 
         public float HighScore => highScore;
-        
-
         private void Awake()
         {
             IsGameOver = false;
@@ -32,7 +32,6 @@ namespace DoodleJump.Managers
         {
             SoundManager.Instance.StopSound(1);
         }
-
         private void Update()
         {
             if (Score > highScore)
@@ -41,17 +40,14 @@ namespace DoodleJump.Managers
                 PlayerPrefs.SetFloat("High Score",highScore);
             }
         }
-
         public void GameOver()
         {
             IsGameOver = true;
             SoundManager.Instance.PlaySound(1);
         }
-
         public void RestartGame()
         {
             IsGameOver = false;
-            score = 0;
         }
     }
 }
