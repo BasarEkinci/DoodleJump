@@ -38,7 +38,6 @@ namespace DoodleJump.UIs.GameSceneUIs
                     gamePanel.SetActive(false);
                     gameOverPanel.SetActive(true);
                 }
-                
             }
             else
             {

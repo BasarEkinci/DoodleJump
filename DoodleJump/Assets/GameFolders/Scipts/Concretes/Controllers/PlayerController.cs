@@ -13,7 +13,7 @@ namespace DoodleJump.Controllers
         private PlayerInputs input;
         private bool isFacingRight = true;
         private int bulletCounter = 20;
-        
+
         public bool IsJumping => playerRigidbody2D.velocity.y > 0.01f;
         
         public int BulletCounter
@@ -33,18 +33,23 @@ namespace DoodleJump.Controllers
             
             if(bulletCounter > 0)
                 CreateBullet();
-            
-            GameManager.Instance.Score = transform.position.y;
-            if (transform.position.x <= -6.1f || transform.position.x >= 6.1f)
-            {
-                transform.position = new Vector3(transform.position.x * -1, transform.position.y);
-            }
+            PlayerScreenPosition();
         }
-
+        
         private void FixedUpdate()
         {
             Move();
             Flip();
+        }
+
+        private void PlayerScreenPosition()
+        {
+            if (transform.position.x > 6.1f + 0.3f)
+                transform.position = new Vector3(-6.1f - 0.3f, transform.position.y, -5f);
+            
+            if (transform.position.x < -6.1f - 0.3f)
+                transform.position = new Vector3(6.1f + 0.3f, transform.position.y, -5f);
+            
         }
 
         // Shooting bullet------------------

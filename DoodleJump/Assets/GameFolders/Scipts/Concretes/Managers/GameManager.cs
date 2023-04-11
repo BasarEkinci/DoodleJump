@@ -17,8 +17,6 @@ namespace DoodleJump.Managers
             {
                 if (value > score)
                     score = value;
-                if (IsGameOver)
-                    score = 0;
             }
         }
 
@@ -34,6 +32,7 @@ namespace DoodleJump.Managers
         }
         private void Update()
         {
+            score = Camera.main.transform.position.y - 7f;
             if (Score > highScore)
             {
                 highScore = score;
